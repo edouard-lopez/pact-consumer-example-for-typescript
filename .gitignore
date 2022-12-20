@@ -27,3 +27,8 @@ build/
 
 # Misc
 .DS_Store
+
+
+.pnp.loader.mjs
+.pnp.cjs
+.yarn/

@@ -34,12 +34,15 @@
     "lint": "eslint . --ext .ts --ext .mts",
     "test": "jest",
     "test:coverage": "jest --coverage",
+    "test:contracts": "jest --testMatch '**/*.contract.test.ts' ",
     "prettier": "prettier --config .prettierrc --write .",
     "test:watch": "jest --watch"
   },
   "author": "Jakub Synowiec <jsynowiec@users.noreply.github.com>",
   "license": "Apache-2.0",
   "dependencies": {
+    "@pact-foundation/pact": "^10.4.0",
+    "jest-pact": "^0.10.2",
     "tslib": "~2.4"
   },
   "volta": {

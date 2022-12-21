@@ -1,6 +1,6 @@
 import { pactWith } from 'jest-pact/dist/v3';
 import { MatchersV3 as Matchers } from '@pact-foundation/pact';
-import { api } from './main.js';
+import { api } from './index.js';
 
 const CUSTOMERS_COUNT = 3;
 

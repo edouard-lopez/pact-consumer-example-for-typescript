@@ -7,7 +7,11 @@ export default {
   moduleNameMapper: {
     '^(\\.{1,2}/.*)\\.(m)?js$': '$1',
   },
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(m)?ts$',
+  testMatch: [
+    '**/__tests__/**/*.(m)?[jt]s?(x)',
+    '**/?(*.)+(spec|test).(m)?[jt]s?(x)',
+    '!**/*.contract.test.ts',
+  ],
   coverageDirectory: 'coverage',
   collectCoverageFrom: [
     'src/**/*.ts',

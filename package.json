@@ -36,6 +36,7 @@
     "lint": "eslint . --ext .ts --ext .mts",
     "test": "jest",
     "test:coverage": "jest --coverage",
+    "test:contracts": "jest --testMatch '**/*.contract.test.ts' ",
     "prettier": "prettier --config .prettierrc --write .",
     "test:watch": "jest --watch"
   },

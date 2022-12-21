@@ -1,6 +1,6 @@
 import { pactWith } from 'jest-pact';
 import { Matchers } from '@pact-foundation/pact';
-import { api } from './main.js';
+import { api } from './index.js';
 
 pactWith(
   { consumer: 'ms.cart:with-pact@v2', provider: 'ms.customers' },

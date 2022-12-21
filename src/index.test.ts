@@ -1,4 +1,4 @@
-import { api } from './main.js';
+import { api } from './index.js';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 

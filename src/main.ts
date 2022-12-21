@@ -1,9 +1,6 @@
 import axios from 'axios';
 
-const defaultBaseUrl = 'http://your-api.example.com';
-
-export const api = (baseUrl = defaultBaseUrl) => ({
-  getHealth: () =>
-    axios.get(`${baseUrl}/health`).then((response) => response.data.status),
-  /* other endpoints here */
+export const api = (baseUrl = 'http://localhost'): any => ({
+  getCustomers: (): any =>
+    axios.get(`${baseUrl}/api/customers`).then((response) => response.data),
 });

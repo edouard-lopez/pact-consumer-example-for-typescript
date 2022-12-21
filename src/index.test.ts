@@ -1,4 +1,4 @@
-import { api } from './index.js';
+import { api, Customers } from './index.js';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 
@@ -12,7 +12,7 @@ const server = setupServer(
         { firstname: 'foo', lastname: 'bar' },
         { firstname: 'Édouard', lastname: 'Lopez' },
         { firstname: 'Guillaume', lastname: 'Camus' },
-      ]),
+      ] as Customers),
     );
   }),
 );

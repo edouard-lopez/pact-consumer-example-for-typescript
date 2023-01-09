@@ -71,6 +71,11 @@ Finally, connect to VPN and publish:
 ```
 
 
+## Repository Metadata
+
+Follow the [How to Add repo URL and main branch metadata][add-metadata].
+
+
 [msw]: https://github.com/mswjs/msw
 [specs-v2]:https://github.com/pact-foundation/pact-specification/tree/version-2
 [specs-v3]:https://github.com/pact-foundation/pact-specification/tree/version-3
@@ -78,3 +83,4 @@ Finally, connect to VPN and publish:
 [matchers-v3]: https://docs.pact.io/implementation_guides/javascript/docs/matching#v3-matching-rules
 [pact-cli]: https://github.com/pact-foundation/pact-ruby-standalone/releases
 [just]: https://github.com/casey/just
+[add-metadata]: https://manomano.atlassian.net/l/cp/GsiPEc4M

@@ -1,21 +1,5 @@
-import { api, Customers } from './index.js';
-import { rest } from 'msw';
-import { setupServer } from 'msw/node';
-
-const baseUrl = 'http://localhost';
-
-const server = setupServer(
-  rest.get(`${baseUrl}/api/customers`, (_, res, ctx) => {
-    return res(
-      ctx.status(200),
-      ctx.json([
-        { firstname: 'foo', lastname: 'bar' },
-        { firstname: 'Édouard', lastname: 'Lopez' },
-        { firstname: 'Guillaume', lastname: 'Camus' },
-      ] as Customers),
-    );
-  }),
-);
+import { api } from './index.js';
+import { server, baseUrl } from './server.js';
 
 let client;
 beforeEach(() => (client = api(baseUrl)));

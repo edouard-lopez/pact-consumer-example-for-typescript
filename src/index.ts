@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-export type Customer = { firstname: string; lastname: string };
+export type uuid = string;
+export type Customer = { id: uuid; firstname: string; lastname: string };
 export type Customers = Array<Customer>;
 type Apis = {
   getCustomers: () => Promise<Customers>;

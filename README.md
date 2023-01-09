@@ -48,8 +48,20 @@
 ❯ jest --testMatch '**/*v3.contract.test.ts'
 ```
 
+### Publish contract
+
+requirements: [just]
+To publish you need to download the [Pact-CLI binary][pact-cli]:
+
+```console
+❯ just install-pact-cli
+```
+
+
 [msw]: https://github.com/mswjs/msw
 [specs-v2]:https://github.com/pact-foundation/pact-specification/tree/version-2
 [specs-v3]:https://github.com/pact-foundation/pact-specification/tree/version-3
 [matchers-v2]: https://docs.pact.io/implementation_guides/javascript/docs/matching#v2-matching-rules
 [matchers-v3]: https://docs.pact.io/implementation_guides/javascript/docs/matching#v3-matching-rules
+[pact-cli]: https://github.com/pact-foundation/pact-ruby-standalone/releases
+[just]: https://github.com/casey/just

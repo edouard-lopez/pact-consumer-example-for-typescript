@@ -48,6 +48,81 @@
         },
         "status": 200
       }
+    },
+    {
+      "description": "A request for API customer-orders",
+      "providerStates": [
+        {
+          "name": "Customers orders are available"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/api/customer/2099d96b-1693-4f6f-b218-130238346855/orders"
+      },
+      "response": {
+        "body": {
+          "customer": "2099d96b-1693-4f6f-b218-130238346855",
+          "orders": [
+            {
+              "id": "bddb4566-b025-4f1c-9784-802402e5ea9b",
+              "quantity": 2
+            },
+            {
+              "id": "bddb4566-b025-4f1c-9784-802402e5ea9b",
+              "quantity": 2
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "body": {
+            "$.customer": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "regex",
+                  "regex": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+                }
+              ]
+            },
+            "$.orders": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type",
+                  "min": 2
+                }
+              ]
+            },
+            "$.orders[*].id": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                },
+                {
+                  "match": "type"
+                }
+              ]
+            },
+            "$.orders[*].quantity": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "integer"
+                },
+                {
+                  "match": "integer"
+                }
+              ]
+            }
+          }
+        },
+        "status": 200
+      }
     }
   ],
   "metadata": {

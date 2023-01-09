@@ -15,4 +15,17 @@ describe('customers endpoint', () => {
       expect(customers.length).toEqual(CUSTOMERS_COUNT);
     });
   });
+
+  it('returns customer-orders', async () => {
+    const CUSTOMER_ORDERS_COUNT = 2;
+
+    await client
+      .getCustomerOrders('2099d96b-1693-4f6f-b218-130238346855')
+      .then((customer_orders) => {
+        expect(customer_orders.customer).toBe(
+          '2099d96b-1693-4f6f-b218-130238346855',
+        );
+        expect(customer_orders.orders.length).toBe(CUSTOMER_ORDERS_COUNT);
+      });
+  });
 });

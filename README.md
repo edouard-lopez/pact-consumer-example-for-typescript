@@ -6,9 +6,9 @@
 >
 > Having an integration test that check on your HTTP client. with mock (`nock`, `msw`) is really close
 
-### Tests
+## Tests Goal
 
-> Aim: check we are able to do a `GET` request on `/api/customers` and get the correct data.
+> We aim to check we are able to do a `GET` request on `/api/customers` and  `/api/customer/:id/orders` and get the correct data shape.
 
 | Test file                   | Description                                                                    | Benefits                                              |
 | --------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------------------- |
@@ -16,45 +16,58 @@
 | `index-matcher-v2.contract` | a contract test using pact [specs@v2][specs-v2] and [matchers@v2][matchers-v2] | - check HTTP client's plumbing<br>- generate contract |
 | `index-matcher-v3.contract` | a contract test using pact [specs@v3][specs-v3] and [matchers@v3][matchers-v3] | - check HTTP client's plumbing<br>- generate contract |
 
-### Install
+## Install
 
 ```console
 ❯ yarn install
 ```
 
-### Usage
+## Usage
 
-#### Run Only _index.test.ts_
+### Run Only _index.test.ts_
 
 ```console
 ❯ yarn test
 ```
 
-#### Run All contract tests
+### Run All contract tests
 
 ```console
 ❯ yarn test:contracts # both contract test files
 ```
 
-#### Run Only Pact@v2 test
+### Run Only Pact@v2 test
 
 ```console
 ❯ jest --testMatch '**/*v2.contract.test.ts'
 ```
 
-#### Run Only Pact@v3 test
+### Run Only Pact@v3 test
 
 ```console
 ❯ jest --testMatch '**/*v3.contract.test.ts'
 ```
 
-### Publish contract
+## Publish contract
 
-requirements: [just]
+**requirements:** [just].
+
 To publish you need to download the [Pact-CLI binary][pact-cli]:
 
 ```console
 ❯ just install-pact-cli
+```
+
+Then edit the `.env` to fill:
+
+```
+PACT_BROKER_URL=https://your.broker.org/
+REPO_URL=https://git.company.org/…
+```
+
+Finally, connect to VPN and publish:
+```
+❯ just publish-contract
 ```
 
 

@@ -1,6 +1,6 @@
 {
   "consumer": {
-    "name": "ms.cart:with-pact@v3"
+    "name": "ms.pact-consumer-example-for-typescript:with-pact@v3"
   },
   "interactions": [
     {

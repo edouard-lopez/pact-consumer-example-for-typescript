@@ -8,24 +8,21 @@ pactWith(
   { consumer: 'ms.cart:with-pact@v3', provider: 'ms.customers' },
   (interaction) => {
     interaction('customers endpoint', ({ provider, execute }) => {
-      beforeEach(() =>
-        provider
-          .given('Customers are available')
-          .uponReceiving('A request for API customers')
-          .withRequest({
-            method: 'GET',
-            path: '/api/customers',
-          })
-          .willRespondWith({
-            status: 200,
-            body: Matchers.constrainedArrayLike(
-              { firstname: 'foo', lastname: 'bar' },
-              CUSTOMERS_COUNT,
-              CUSTOMERS_COUNT,
-            ),
-          }),
-      );
-
+      provider
+      .given('Customers are available')
+      .uponReceiving('A request for API customers')
+      .withRequest({
+        method: 'GET',
+        path: '/api/customers',
+      })
+      .willRespondWith({
+        status: 200,
+        body: Matchers.constrainedArrayLike(
+          { firstname: 'foo', lastname: 'bar' },
+          CUSTOMERS_COUNT,
+          CUSTOMERS_COUNT,
+        ),
+      })
       execute('some api call', (mockserver) =>
         api(mockserver.url)
           .getCustomers()

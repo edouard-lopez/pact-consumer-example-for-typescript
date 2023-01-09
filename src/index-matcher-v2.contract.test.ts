@@ -3,7 +3,10 @@ import { Matchers } from '@pact-foundation/pact';
 import { api } from './index.js';
 
 pactWith(
-  { consumer: 'ms.cart:with-pact@v2', provider: 'ms.customers' },
+  {
+    consumer: 'ms.pact-consumer-example-for-typescript:with-pact@v2',
+    provider: 'ms.customers',
+  },
   (provider) => {
     let client;
     beforeEach(() => {

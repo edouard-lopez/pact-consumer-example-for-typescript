@@ -5,7 +5,7 @@ import { api } from './index.js';
 pactWith(
   {
     consumer: 'ms.pact-consumer-example-for-typescript:with-pact@v2',
-    provider: 'ms.customers',
+    provider: 'ms.pact-provider-example-for-typescript',
   },
   (provider) => {
     let client;

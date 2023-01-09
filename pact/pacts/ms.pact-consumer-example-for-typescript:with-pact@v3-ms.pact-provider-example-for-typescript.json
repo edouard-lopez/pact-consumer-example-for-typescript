@@ -138,6 +138,6 @@
     }
   },
   "provider": {
-    "name": "ms.customers"
+    "name": "ms.pact-provider-example-for-typescript"
   }
 }

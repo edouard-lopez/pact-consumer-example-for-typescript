@@ -7,7 +7,7 @@ const CUSTOMERS_COUNT = 3;
 pactWith(
   {
     consumer: 'ms.pact-consumer-example-for-typescript:with-pact@v3',
-    provider: 'ms.customers',
+    provider: 'ms.pact-provider-example-for-typescript',
   },
   (interaction) => {
     interaction('returns customers', ({ provider, execute }) => {

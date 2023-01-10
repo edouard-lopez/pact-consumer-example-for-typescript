@@ -9,22 +9,21 @@ variables:
   PROJECT_NAME: 'pact-consumer-example-for-typescript'
   PROJECT_COMPONENT: 'web'
   ORGANIZATION: 'gear-tech-excellence'
-  DOMAIN: "qraft"
-  OWNER: "qraft"
+  DOMAIN: 'qraft'
+  OWNER: 'qraft'
   SKIP_CD: 'true' # we don't need to deploy this sample project
   SKIP_JOB_SECURITY_CHECK: 'true' # we need to deactivate because trivy needs the docker image
   SKIP_BUILD: 'true' # no need for this example project
   SKIP_JOB_LINT: 'true' # no need for this example project
   SKIP_STAGE_BUILD: 'true' # no need for this example project
+  SKIP_JOB_YARN_TEST: 'true' # no need for this example project
 
 # Default and mainly used stages at Manomano
 stages: !reference [.stages]
 
-
 test:
   stage: ci:test
-  script:
-    - yarn test:contracts
+  extends: yarn_test
 
 test-contract-generate:
   stage: ci:test
@@ -35,6 +34,13 @@ test-contract-publish:
   stage: ci:test
   needs:
     - job: test-contract-generate
+  variables:
+    PACT_BROKER_URL: https://infra-pact-broker-web.support.manomano.com
   script:
     - make install-pact-cli
     - yarn publish:contracts
+
+build_code:
+  stage: ci:build-test
+  only:
+    - true == false

@@ -4,7 +4,7 @@
   "description": "An example of writing contract test with `pact` and `jest-pact`",
   "type": "module",
   "engines": {
-    "node": ">= 18.12 <19"
+    "node": ">= 18"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
@@ -24,7 +24,7 @@
     "typescript": "~4.9"
   },
   "scripts": {
-    "publish:contract": "just publish-contract",
+    "publish:contracts": "just publish-contracts",
     "lint": "eslint . --ext .ts --ext .mts",
     "test": "jest",
     "test:contracts": "jest --testMatch '**/*.contract.test.ts' ",

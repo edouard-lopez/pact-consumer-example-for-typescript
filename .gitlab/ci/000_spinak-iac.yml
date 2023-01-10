@@ -1,0 +1,5 @@
+---
+include:
+  - project: "platform-engineering/spinak/iac-lib"
+    file: "gitlab-cd-template/spinak-cd-pipeline.gitlab-ci.yml"
+    ref: "master"

@@ -1,0 +1,43 @@
+include:
+  - local: '.gitlab/ci/*.yml'
+  - project: 'core-utils/gitlab-ci-yml-templates'
+    file: 'templates/stages.yml'
+    ref: master
+
+variables:
+  PROJECT_TYPE: 'ms'
+  PROJECT_NAME: 'pact-consumer-example-for-typescript'
+  PROJECT_COMPONENT: 'web'
+  ORGANIZATION: 'gear-tech-excellence'
+  DOMAIN: "qraft"
+  OWNER: "qraft"
+  SKIP_CD: 'true' # we don't need to deploy this sample project
+  SKIP_JOB_SECURITY_CHECK: 'true' # we need to deactivate because trivy needs the docker image
+  SKIP_BUILD: 'true' # no need for this example project
+  SKIP_JOB_LINT: 'true' # no need for this example project
+
+# Default and mainly used stages at Manomano
+stages: !reference [.stages]
+
+
+install-requirements:
+  stage: ci:init 
+  script:
+    - apt update && apt install just 
+
+test:
+  stage: ci:test
+  script:
+    - yarn test:contracts
+
+test-contract-generate:
+  stage: ci:test
+  script:
+    - yarn test
+
+test-contract-publish:
+  stage: ci:test
+  needs:
+    - job: test-contract-generate
+  script:
+    - yarn publish:contracts

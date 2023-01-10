@@ -1,0 +1,9 @@
+---
+include:
+  - project: 'core-utils/gitlab-ci-yml-templates'
+    file: 'nodejs-container.gitlab-ci.yml'
+    ref: 'master'
+
+variables:
+  # Should be the default configuration in nodejs-container.gitlab-ci.yml file
+  NODE_VERSION: "18"

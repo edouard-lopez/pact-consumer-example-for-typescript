@@ -7,7 +7,7 @@ install-pact-cli:
 #	FILES: files or directory to publish
 publish-contracts: files?=./pact/pacts
 publish-contracts:
-	pact-broker publish \
+	./pact/bin/pact-broker publish \
 		"${files}" \
 		--consumer-app-version=\"$(npx --yes absolute-version)\" \
 		--auto-detect-version-properties \

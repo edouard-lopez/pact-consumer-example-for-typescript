@@ -15,6 +15,7 @@ variables:
   SKIP_JOB_SECURITY_CHECK: 'true' # we need to deactivate because trivy needs the docker image
   SKIP_BUILD: 'true' # no need for this example project
   SKIP_JOB_LINT: 'true' # no need for this example project
+  SKIP_STAGE_BUILD: 'true' # no need for this example project
 
 # Default and mainly used stages at Manomano
 stages: !reference [.stages]

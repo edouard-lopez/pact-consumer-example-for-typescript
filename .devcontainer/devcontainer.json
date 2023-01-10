@@ -10,6 +10,9 @@
   },
   "customizations": {
     "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "fish"
+      },
       "extensions": [
         "esbenp.prettier-vscode",
         "dbaeumer.vscode-eslint",

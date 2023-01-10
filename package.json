@@ -24,7 +24,7 @@
     "typescript": "~4.9"
   },
   "scripts": {
-    "publish:contracts": "just publish-contracts",
+    "publish:contracts": "make publish-contracts",
     "lint": "eslint . --ext .ts --ext .mts",
     "test": "jest",
     "test:contracts": "jest --testMatch '**/*.contract.test.ts' ",

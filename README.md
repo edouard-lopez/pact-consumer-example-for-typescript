@@ -50,12 +50,12 @@
 
 ## Publish contract
 
-**requirements:** [just].
+**requirements:** [make].
 
 To publish you need to download the [Pact-CLI binary][pact-cli]:
 
 ```console
-❯ just install-pact-cli
+❯ make install-pact-cli
 ```
 
 Then edit the `.env` to fill:
@@ -66,7 +66,7 @@ PACT_BROKER_URL=https://your.broker.org/
 
 Finally, connect to VPN and publish:
 ```
-❯ just publish-contract
+❯ make publish-contract
 ```
 
 
@@ -81,5 +81,4 @@ Follow the [How to Add repo URL and main branch metadata][add-metadata].
 [matchers-v2]: https://docs.pact.io/implementation_guides/javascript/docs/matching#v2-matching-rules
 [matchers-v3]: https://docs.pact.io/implementation_guides/javascript/docs/matching#v3-matching-rules
 [pact-cli]: https://github.com/pact-foundation/pact-ruby-standalone/releases
-[just]: https://github.com/casey/just
 [add-metadata]: https://manomano.atlassian.net/l/cp/GsiPEc4M

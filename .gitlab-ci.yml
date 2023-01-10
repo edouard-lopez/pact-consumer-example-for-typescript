@@ -20,11 +20,6 @@ variables:
 stages: !reference [.stages]
 
 
-install-requirements:
-  stage: ci:init 
-  script:
-    - apt update && apt install just 
-
 test:
   stage: ci:test
   script:

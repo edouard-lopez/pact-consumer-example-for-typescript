@@ -35,4 +35,5 @@ test-contract-publish:
   needs:
     - job: test-contract-generate
   script:
+    - make install-pact-cli
     - yarn publish:contracts

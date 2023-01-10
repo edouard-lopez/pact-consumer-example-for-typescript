@@ -33,6 +33,7 @@ build/
 .pnp.cjs
 .yarn/
 
+.env
 # pact
 pact/*/
 pact/README.md

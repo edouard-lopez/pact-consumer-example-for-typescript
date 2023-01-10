@@ -10,7 +10,7 @@ publish-contract contracts_to_publish="./pact/pacts":
         --consumer-app-version=\"$(npx --yes absolute-version)\" \
         --auto-detect-version-properties \
         --broker-base-url=$PACT_BROKER_URL \
-        --build-url="$REPO_URL" \
+        --build-url="${CI_PIPELINE_URL:-no-pipeline-url}" \
         --verbose
 
 # for vscode devcontainer

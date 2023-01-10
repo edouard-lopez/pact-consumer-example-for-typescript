@@ -62,7 +62,6 @@ Then edit the `.env` to fill:
 
 ```
 PACT_BROKER_URL=https://your.broker.org/
-REPO_URL=https://git.company.org/…
 ```
 
 Finally, connect to VPN and publish:

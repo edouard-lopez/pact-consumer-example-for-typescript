@@ -18,6 +18,7 @@ variables:
   SKIP_STAGE_BUILD: 'true' # no need for this example project
   SKIP_JOB_YARN_TEST: 'true' # no need for this example project
   SKIP_STAGE_TESTS: 'true' # no need for this example project
+  SPK_IMPORT_PROCESS: 'true' # no need for this example project
 
 # Default and mainly used stages at Manomano
 stages: !reference [.stages]

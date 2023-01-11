@@ -17,6 +17,7 @@ variables:
   SKIP_JOB_LINT: 'true' # no need for this example project
   SKIP_STAGE_BUILD: 'true' # no need for this example project
   SKIP_JOB_YARN_TEST: 'true' # no need for this example project
+  SKIP_STAGE_TESTS: 'true' # no need for this example project
 
 # Default and mainly used stages at Manomano
 stages: !reference [.stages]
@@ -40,7 +41,15 @@ test-contract-publish:
     - make install-pact-cli
     - yarn publish:contracts
 
-build_code:
-  stage: ci:build-test
+build_code: # ⚠ do NOT do this in real project, this is an example project, that's why we disable jobs
+  only:
+    - true == false
+
+gemnasium_check: # ⚠ do NOT do this in real project, this is an example project, that's why we disable jobs
+  rules:
+    - if: $NEVER == "true"
+
+trivy_check: # ⚠ do NOT do this in real project, this is an example project, that's why we disable jobs
+  image: ${DOCKER_REGISTRY}/sec/trivy:latest
   only:
     - true == false

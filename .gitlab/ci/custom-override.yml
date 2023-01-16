@@ -1,0 +1,35 @@
+---
+#
+# customization to have a simpler example, do NOT COPY!
+#
+
+variables:
+  SKIP_CD: 'true' # we don't need to deploy this sample project
+  SKIP_JOB_SECURITY_CHECK: 'true' # we need to deactivate because trivy needs the docker image
+  SKIP_BUILD: 'true' # no need for this example project
+  SKIP_JOB_LINT: 'true' # no need for this example project
+  SKIP_STAGE_BUILD: 'true' # no need for this example project
+  SKIP_JOB_YARN_TEST: 'true' # no need for this example project
+  SKIP_STAGE_TESTS: 'true' # no need for this example project
+  SPK_IMPORT_PROCESS: 'true' # no need for this example project
+
+yarn_dependencies:
+  extends: '.yarn_dependencies'
+  cache: [] # only for example purpose, do NOT copy!
+
+sonarqube_check:
+  only:
+    - true == false
+
+build_code: # ⚠ do NOT do this in real project, this is an example project, that's why we disable jobs
+  only:
+    - true == false
+
+gemnasium_check: # ⚠ do NOT do this in real project, this is an example project, that's why we disable jobs
+  rules:
+    - if: $NEVER == "true"
+
+trivy_check: # ⚠ do NOT do this in real project, this is an example project, that's why we disable jobs
+  image: ${DOCKER_REGISTRY}/sec/trivy:latest
+  only:
+    - true == false

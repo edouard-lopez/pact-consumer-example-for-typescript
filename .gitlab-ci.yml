@@ -11,21 +11,14 @@ variables:
   ORGANIZATION: 'gear-tech-excellence'
   DOMAIN: 'qraft'
   OWNER: 'qraft'
-  SKIP_CD: 'true' # we don't need to deploy this sample project
-  SKIP_JOB_SECURITY_CHECK: 'true' # we need to deactivate because trivy needs the docker image
-  SKIP_BUILD: 'true' # no need for this example project
-  SKIP_JOB_LINT: 'true' # no need for this example project
-  SKIP_STAGE_BUILD: 'true' # no need for this example project
-  SKIP_JOB_YARN_TEST: 'true' # no need for this example project
-  SKIP_STAGE_TESTS: 'true' # no need for this example project
-  SPK_IMPORT_PROCESS: 'true' # no need for this example project
 
 # Default and mainly used stages at Manomano
 stages: !reference [.stages]
 
-test:
+yarn_test:
   stage: ci:test
-  extends: yarn_test
+  script:
+    - yarn test
 
 test-contract-generate:
   stage: ci:test
@@ -36,21 +29,7 @@ test-contract-publish:
   stage: ci:test
   needs:
     - job: test-contract-generate
-  variables:
-    PACT_BROKER_URL: https://infra-pact-broker-web.support.manomano.com
   script:
+    - echo ${PACT_BROKER_URL} # Globally defined in GitLab by our loved SREs 💖
     - make install-pact-cli
     - yarn publish:contracts
-
-build_code: # ⚠ do NOT do this in real project, this is an example project, that's why we disable jobs
-  only:
-    - true == false
-
-gemnasium_check: # ⚠ do NOT do this in real project, this is an example project, that's why we disable jobs
-  rules:
-    - if: $NEVER == "true"
-
-trivy_check: # ⚠ do NOT do this in real project, this is an example project, that's why we disable jobs
-  image: ${DOCKER_REGISTRY}/sec/trivy:latest
-  only:
-    - true == false

@@ -20,7 +20,8 @@
         "tombonnike.vscode-status-bar-format-toggle",
         "skellock.just",
         "yzhang.markdown-all-in-one",
-        "redhat.vscode-yaml"
+        "redhat.vscode-yaml",
+        "stuart.unique-window-colors"
       ]
     }
   },

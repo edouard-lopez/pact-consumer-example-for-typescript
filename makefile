@@ -17,4 +17,5 @@ publish-contracts:
 
 # for vscode devcontainer
 config-container:
-	just --completions fish > $$HOME/.config/fish/completions/just.fish
+	@echo "nothing to do"
+	

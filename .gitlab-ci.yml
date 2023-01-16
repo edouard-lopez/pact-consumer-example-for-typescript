@@ -30,6 +30,6 @@ test-contract-publish:
   needs:
     - job: test-contract-generate
   script:
-    - echo ${PACT_BROKER_URL} # Globally defined in GitLab by our loved SREs 💖
     - make install-pact-cli
+    - make show-broker-url
     - yarn publish:contracts

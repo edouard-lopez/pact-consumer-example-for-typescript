@@ -37,6 +37,7 @@
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"
   "remoteEnv": {
-    "PATH": "${containerEnv:PATH}:${containerWorkspaceFolder}/node_modules/.bin/"
+    "PATH": "${containerEnv:PATH}:${containerWorkspaceFolder}/node_modules/.bin/",
+    "PACT_BROKER_URL": "https://infra-pact-broker-web.support.manomano.com"
   }
 }

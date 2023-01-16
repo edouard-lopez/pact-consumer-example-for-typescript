@@ -18,7 +18,9 @@
         "esbenp.prettier-vscode",
         "dbaeumer.vscode-eslint",
         "tombonnike.vscode-status-bar-format-toggle",
-        "skellock.just"
+        "skellock.just",
+        "yzhang.markdown-all-in-one",
+        "redhat.vscode-yaml"
       ]
     }
   },

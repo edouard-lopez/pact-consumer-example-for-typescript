@@ -10,10 +10,10 @@ show-broker-url:
 #	FILES: files or directory to publish
 publish-contracts: files?=./pact/pacts
 publish-contracts:
-	npx --yes absolute-version
+	node_modules/.bin/absolute-version-from-git-tag
 	./pact/bin/pact-broker publish \
 		"${files}" \
-		--consumer-app-version="$$(npx --yes absolute-version)" \
+		--consumer-app-version="$$(node_modules/.bin/absolute-version-from-git-tag)" \
 		--auto-detect-version-properties \
 		--broker-base-url="$${PACT_BROKER_URL}" \
 		--build-url="$${CI_PIPELINE_URL:-no-pipeline-url}" \

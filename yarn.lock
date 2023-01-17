@@ -1052,7 +1052,7 @@ abort-controller@^3.0.0:
 
 absolute-version@^1.0.1:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/absolute-version/-/absolute-version-1.0.1.tgz#590e150b67612c99edaccb72aca3ee483097de59"
+  resolved "https://registry.npmjs.org/absolute-version/-/absolute-version-1.0.1.tgz#590e150b67612c99edaccb72aca3ee483097de59"
   integrity sha512-EsyHsHDWcPizBxdm0vvrDRzsiHrCN8GUiTef5IQURJJgveYftRwYccNo0M1foNpVi0ZPQlaLuxHe+oHTlnxxAw==
   dependencies:
     git-describe "^4.1.0"

@@ -32,12 +32,12 @@ test-contract-publish:
   script:
     - make install-pact-cli
     - make show-broker-url
-    - npx --yes absolute-version
+    - node_modules/.bin/absolute-version-from-git-tag
     # - yarn publish:contracts
     - >
       ./pact/bin/pact-broker publish \
       "./pact/pacts" \
-      --consumer-app-version="$(npx --yes absolute-version)" \
+      --consumer-app-version="$(node_modules/.bin/absolute-version-from-git-tag)" \
       --auto-detect-version-properties \
       --broker-base-url=${PACT_BROKER_URL} \
       --build-url="${CI_PIPELINE_URL:-no-pipeline-url}" \
